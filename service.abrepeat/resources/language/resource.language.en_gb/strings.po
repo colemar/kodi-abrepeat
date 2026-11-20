@@ -1,0 +1,41 @@
+# Kodi Media Center language file
+# Addon Name: A-B Repeat
+# Addon id: service.abrepeat
+# Addon Provider: colemar
+msgid ""
+msgstr ""
+"Project-Id-Version: service.abrepeat\n"
+"Report-Msgid-Bugs-To: https://github.com/colemar/kodi-abrepeat/issues\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "A-B repeat"
+msgstr ""
+
+msgctxt "#30001"
+msgid "A = {a}"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Loop {a} → {b}"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Set A first"
+msgstr ""
+
+msgctxt "#30004"
+msgid "B must be after A"
+msgstr ""
+
+msgctxt "#30005"
+msgid "A-B repeat off"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Nothing is playing"
+msgstr ""

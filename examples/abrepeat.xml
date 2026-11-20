@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Example keymap for service.abrepeat. Copy to special://profile/keymaps/abrepeat.xml
+  (userdata/keymaps/) and restart Kodi.
+  F5 = e.g. the Nvidia Shield Netflix button remapped to KEYCODE_F5 with Button Mapper.
+  The <global> section makes the key work in every window (fullscreen video, OSD, seek bar).
+-->
+<keymap>
+  <global>
+    <keyboard>
+      <f5>RunScript(service.abrepeat)</f5>
+      <!-- Optional: separate keys
+      <f6>RunScript(service.abrepeat,a)</f6>
+      <f7>RunScript(service.abrepeat,b)</f7>
+      <f8>RunScript(service.abrepeat,clear)</f8>
+      -->
+    </keyboard>
+  </global>
+</keymap>
