@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.colemar" name="Colemar Repository" version="1.0.0" provider-name="colemar">
+  <extension point="xbmc.addon.repository" name="Colemar Repository">
+    <dir>
+      <info compressed="false">https://colemar.github.io/kodi-abrepeat/repo/addons.xml</info>
+      <checksum>https://colemar.github.io/kodi-abrepeat/repo/addons.xml.md5</checksum>
+      <datadir zip="true">https://colemar.github.io/kodi-abrepeat/repo/</datadir>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Kodi add-ons by colemar (A-B Repeat)</summary>
+    <summary lang="it_IT">Add-on Kodi di colemar (A-B Repeat)</summary>
+    <description lang="en_GB">Install and keep up to date the add-ons published at github.com/colemar.</description>
+    <description lang="it_IT">Installa e mantiene aggiornati gli add-on pubblicati su github.com/colemar.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/colemar/kodi-abrepeat</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>

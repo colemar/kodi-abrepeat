@@ -16,11 +16,22 @@ Designed for **Android TV / Google TV / Fire TV** boxes and TVs driven by a remo
 
 ## Installation
 
-1. Download `service.abrepeat-<version>.zip` from [Releases](../../releases).
-2. In Kodi go to **Settings → System → Add-ons** and enable **Unknown sources**.
-3. Go to **Add-ons → Install from zip file** and select the zip.
+### From the Kodi repository (recommended, automatic updates)
 
-The zip can come from a USB stick or from any Kodi network source (SMB, NFS, WebDAV…).
+1. **Settings → System → Add-ons** → enable **Unknown sources**.
+2. **Settings → File manager → Add source** → enter `https://colemar.github.io/kodi-abrepeat/` and name it `colemar`.
+3. **Add-ons → Install from zip file** → `colemar` → `repository.colemar-<version>.zip`.
+4. **Add-ons → Install from repository → Colemar Repository → Services → A-B Repeat → Install**.
+
+Kodi then updates the add-on automatically when a new version is published.
+
+### From a zip file
+
+1. Download `service.abrepeat-<version>.zip` from [Releases](../../releases).
+2. **Settings → System → Add-ons** → enable **Unknown sources**.
+3. **Add-ons → Install from zip file** → select the zip.
+
+The zip can come from a USB stick or from any Kodi network source (SMB, NFS, WebDAV…). Updates are manual.
 
 The add-on does **not** assign a key by itself. Pick one of the methods below.
 
@@ -102,11 +113,15 @@ Any keycode Kodi does not already use works. See the [Android keycode list](http
 - `default.py` is the command run by the key. It stores A and B as properties of the Home window (`abrepeat.a`, `abrepeat.b`).
 - `service.py` is a background service. It reads those properties and calls `xbmc.Player().seekTime(A)` when the position reaches B.
 
-## Building
+## Building and publishing
 
 ```bash
-./build.sh        # → dist/service.abrepeat-<version>.zip
+./build.sh          # → dist/service.abrepeat-<version>.zip (release asset)
+./make_repo.sh      # → site/ (Kodi repository: index.html, repo/addons.xml, zips)
+./make_repo.sh -p   # build and force-push site/ to the gh-pages branch (GitHub Pages)
 ```
+
+To release a new version: bump `version` in `service.abrepeat/addon.xml`, commit, run `./make_repo.sh -p`, then create the GitHub release with `./build.sh` and `gh release create`.
 
 ## License
 
