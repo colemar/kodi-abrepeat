@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="service.abrepeat" name="A-B Repeat" version="1.1.0" provider-name="colemar">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.service" library="service.py"/>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">A-B repeat (section loop) for video and audio playback</summary>
+    <summary lang="it_IT">Ripetizione A-B (loop di un tratto) durante la riproduzione</summary>
+    <description lang="en_GB">Loop any section of the media being played. Map a remote key to the add-on (e.g. with Keymap Editor): 1st press sets A, 2nd press sets B and starts the loop, 3rd press clears it. Also accepts the arguments a, b and clear for separate keys.</description>
+    <description lang="it_IT">Ripete in loop un tratto qualsiasi del contenuto in riproduzione. Assegna un tasto del telecomando all'add-on (ad es. con Keymap Editor): 1a pressione imposta A, 2a imposta B e avvia il loop, 3a lo disattiva. Accetta anche gli argomenti a, b e clear per tasti separati.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/colemar/kodi-abrepeat</source>
+    <website>https://github.com/colemar/kodi-abrepeat</website>
+    <news>v1.1.0: English/Italian localization, add-on icon. v1.0.1: no keymap installed automatically.</news>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+<addon id="repository.colemar" name="Colemar Repository" version="1.0.0" provider-name="colemar">
+  <extension point="xbmc.addon.repository" name="Colemar Repository">
+    <dir>
+      <info compressed="false">https://colemar.github.io/kodi-abrepeat/repo/addons.xml</info>
+      <checksum>https://colemar.github.io/kodi-abrepeat/repo/addons.xml.md5</checksum>
+      <datadir zip="true">https://colemar.github.io/kodi-abrepeat/repo/</datadir>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Kodi add-ons by colemar (A-B Repeat)</summary>
+    <summary lang="it_IT">Add-on Kodi di colemar (A-B Repeat)</summary>
+    <description lang="en_GB">Install and keep up to date the add-ons published at github.com/colemar.</description>
+    <description lang="it_IT">Installa e mantiene aggiornati gli add-on pubblicati su github.com/colemar.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/colemar/kodi-abrepeat</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+</addons>
