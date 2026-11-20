@@ -121,7 +121,7 @@ Any keycode Kodi does not already use works. See the [Android keycode list](http
 ./make_repo.sh -p   # build and force-push site/ to the gh-pages branch (GitHub Pages)
 ```
 
-To release a new version: bump `version` in `service.abrepeat/addon.xml`, commit, run `./make_repo.sh -p`, then create the GitHub release with `./build.sh` and `gh release create`.
+To release a new version: bump `version` in `service.abrepeat/addon.xml`, commit, push, run `./make_repo.sh -p`, then create the GitHub release with `./build.sh` and `gh release create vx.y.z dist/service.abrepeat-x.y.z.zip --target main --title vx.y.z --notes "..."`.
 
 ## License
 
