@@ -12,7 +12,7 @@ One remote key does all three steps:
 
 The key works while playing, while paused (with frame stepping as well) and with the OSD open. A/B are cleared automatically when playback starts, stops or ends.
 
-Requires Kodi 19 (Matrix) or later and works on any platform. The add-on has been used on Android TV (Nvidia Shield) and needs no patched Kodi build.
+Designed for **Android TV / Google TV / Fire TV** boxes and TVs driven by a remote. It requires Kodi 19 (Matrix) or later and the stock Kodi build, no patches needed. Tested on an Nvidia Shield.
 
 ## Installation
 
@@ -64,26 +64,30 @@ Optional arguments for separate keys:
 
 Keymaps are loaded in alphabetical order and later files win, so `gen.xml` overrides `abrepeat.xml` for the same key.
 
-## Nvidia Shield: using the Netflix button
+## Using a dedicated app button (Netflix, Prime Video, YouTube…)
 
-The Netflix button on the 2019+ Shield remote sends `KEYCODE_BUTTON_12` (199). Android intercepts it to launch Netflix (or shows an "Open with…" dialog), and Kodi never receives it. **Button Mapper** (by flar2, free on the Play Store) can turn it into a key Kodi understands.
+Most Android TV remotes have app buttons that Android intercepts before Kodi sees them. **Button Mapper** (by flar2, free on the Play Store) can turn such a button into a key Kodi understands. A plain free key (a color button, a spare media key) needs none of this: map it directly with Keymap Editor.
 
-1. Install **Button Mapper** on the Shield. When asked, enable it as an **Accessibility Service**.
-2. **Add Buttons → Add Button**, then press the Netflix button. It appears as `BUTTON_12 / 199`.
+The steps below use the Netflix button of the Nvidia Shield remote (2019+) as the example. Other remotes report different keycodes, but the procedure is the same.
+
+The Shield Netflix button sends `KEYCODE_BUTTON_12` (199). Android intercepts it to launch Netflix (or shows an "Open with…" dialog), and Kodi never receives it.
+
+1. Install **Button Mapper** on the TV device. When asked, enable it as an **Accessibility Service**.
+2. **Add Buttons → Add Button**, then press the app button. On the Shield the Netflix button appears as `BUTTON_12 / 199`.
 3. Open it, enable **Customize**, then **Single tap → Advanced → Custom keycode (ver 2)**.
    *Ver 2 needs a single adb command. The first "Custom keycode" option needs adb after every reboot.*
 4. Grant the permission once over adb, from a PC or from Termux on a phone:
 
-   On the Shield, enable developer options first: Settings → Device Preferences → About → press *Build* 7 times. Then turn on Developer options → **Network debugging**.
+   Enable developer options on the device first (Shield: Settings → Device Preferences → About → press *Build* 7 times). Then turn on **Network debugging** (or ADB/USB debugging) in Developer options.
    ```bash
    pkg install android-tools          # Termux only
-   adb connect <shield-ip>:5555       # accept the prompt on the TV ("Always allow")
+   adb connect <device-ip>:5555       # accept the prompt on the TV ("Always allow")
    adb shell pm grant flar2.homebutton android.permission.WRITE_SECURE_SETTINGS
    adb disconnect
    ```
    Use the exact command Button Mapper shows if it differs. Network debugging can be turned off afterwards, and the permission survives reboots.
 5. In **Enter key code** type `135` (`KEYCODE_F5`) and confirm.
-6. Map F5 in Kodi with Keymap Editor (press the Netflix button when asked) or with the manual keymap above.
+6. Map F5 in Kodi with Keymap Editor (press the app button when asked) or with the manual keymap above.
 
 Any keycode Kodi does not already use works. See the [Android keycode list](https://buttonmapper.com/keycodes).
 
