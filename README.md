@@ -123,6 +123,10 @@ Any keycode Kodi does not already use works. See the [Android keycode list](http
 
 To release a new version: bump `version` in `service.abrepeat/addon.xml`, commit, push, run `./make_repo.sh -p`, then create the GitHub release with `./build.sh` and `gh release create vx.y.z dist/service.abrepeat-x.y.z.zip --target main --title vx.y.z --notes "..."`.
 
+## AI disclosure
+
+This add-on was developed with Claude (Anthropic) as a coding assistant. Claude wrote the Python code, this README, the build/repository scripts and the Kodi repository add-on, based on the author's requirements and design choices. The author tested every version on an Nvidia Shield with Kodi, reported problems and directed the fixes. The code is small (two short Python files) and fully readable in this repository.
+
 ## License
 
 GPL-2.0-or-later, see [LICENSE](LICENSE).
